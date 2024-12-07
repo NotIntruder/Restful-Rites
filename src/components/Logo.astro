@@ -1,9 +1,21 @@
 ---
-import { SITE } from 'astrowind:config';
+
 ---
+
+<head>
+  <style>
+    @font-face {
+      font-family: 'Roca One';
+      src: url('/src/components/ui/fonts/RocaOne-Rg.woff2') format('woff2'),
+           url('/src/components/ui/fonts/RocaOne-Rg.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+</head>
 
 <span
   class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
 >
-  🚀 {SITE?.name}
+  <span><img src="src/assets/favicons/restfulrites-image.png" style="height: 64px;" class="inline-grid"></span><span style="font-family: Roca One">Restful Rites</span>
 </span>

@@ -10,13 +10,26 @@ import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Brands from '~/components/widgets/Brands.astro';
 
 const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  title: 'RestfulRites',
   ignoreTitleTemplate: true,
 };
 ---
+<head>
+  <style>
+    @font-face {
+      font-family: 'Roca One';
+      src: url('/src/components/ui/fonts/RocaOne-Rg.woff2') format('woff2'),
+           url('/src/components/ui/fonts/RocaOne-Rg.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+</head>
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
@@ -25,28 +38,21 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
+        text: 'Sign up',
         href: 'https://github.com/onwidget/astrowind',
         target: '_blank',
         icon: 'tabler:download',
       },
-      { text: 'Learn more', href: '#features' },
+      { text: 'Why us?', href: '#features' },
     ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
   >
     <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white highlight"> Astro 4.0</span> + Tailwind CSS
+      <span class=" text-blue-500" style="font-family: Roca One;">Restful Rites </span><br><span class="hidden xl:inline text-4xl">Compassionate support, seamless arrangements.</span>
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 4.0
-        + Tailwind CSS.</span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-      Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
-      Blogs.
+        <span class="font-semibold">In times of loss, let us guide you through with a digital solution that simplifies every step of the journey.</span> </span>
     </Fragment>
   </Hero>
 
@@ -59,43 +65,43 @@ const metadata = {
   <Features
     id="features"
     tagline="Features"
-    title="What you get with AstroWind"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022."
+    title="Why Restful Rites"
+    subtitle="Because in moments of loss, you deserve care, simplicity, and understanding."
     items={[
       {
-        title: 'Astro + Tailwind CSS Integration',
+        title: 'Integrated Vendor Marketplace',
         description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-        icon: 'tabler:brand-tailwind',
+          'Explore and compare trusted service providers in one place, making the selection process simple and efficient.',
+        icon: 'tabler:shopping-cart',
       },
       {
-        title: 'Ready-to-use Components',
+        title: 'Interactive Planning Dashboard',
         description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-        icon: 'tabler:components',
+          'Manage every aspect of funeral arrangements through a user-friendly dashboard tailored to your specific needs.',
+        icon: 'tabler:dashboard',
       },
       {
-        title: 'Best Practices',
+        title: 'Cultural and Religious Customization',
         description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
+          'Honor traditions and preferences with features designed to accommodate diverse cultural and religious practices.',
+        icon: 'tabler:hierarchy',
+      },
+      {
+        title: 'Seamless Coordination',
+        description:
+          'Simplify logistics with integrated scheduling and communication tools to ensure a stress-free experience.',
         icon: 'tabler:list-check',
       },
       {
-        title: 'Excellent Page Speed',
+        title: 'Transparent Pricing',
         description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-        icon: 'tabler:rocket',
+          "Make informed decisions with clear, upfront pricing details for services and packages.",
+        icon: 'tabler:currency-dollar',
       },
       {
-        title: 'Search Engine Optimization (SEO)',
+        title: 'Dedicated Support',
         description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
-        icon: 'tabler:arrows-right-left',
-      },
-      {
-        title: 'Open to new ideas and contributions',
-        description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
+          'Receive guidance and assistance throughout the process from a team that truly understands your needs.',
         icon: 'tabler:bulb',
       },
     ]}
@@ -105,33 +111,33 @@ const metadata = {
 
   <Content
     isReversed
-    tagline="Inside template"
-    title="AstroWind's Blueprint: Fun Meets Functionality!"
+    tagline="Insider"
+    title="A Digital Solution for difficult moments"
     items={[
       {
-        title: 'Built on top of Astro 4.0',
+        title: 'Built by Compassion',
         description:
-          'Benefiting from the performance and developer-friendly features of this modern static site generator.',
+          `Designed with your emotions in mind, offering compassionate support during life's difficult moments.`,
       },
       {
-        title: 'Styled using Tailwind CSS',
+        title: 'Simplicity and Ease',
         description:
-          'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
+          'User centric design and intuitive features ensure a seamless experience for users of all backgrounds.',
       },
       {
-        title: 'Cross-browser compatibility',
+        title: 'Evolving with You',
         description:
-          'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
+          'Continuously updated and improved to meet the changing needs of our users and the industry.',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      src: 'https://media.discordapp.net/attachments/1097876386137513984/1315005251702489119/Polished_Wooden_Coffin_Surrounded_By_Red_Roses_And_Greenery_1.png?ex=6755d593&is=67548413&hm=37a86999ee24cf612ed28f4a8e6a16649c6d36b46e4aafa3703eb75cb507badf&=&format=webp&quality=lossless',
       alt: 'Colorful Image',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-      Gain a competitive advantage by incorporating industry leading practices
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Making the Journey Easier</h3>
+      Streamlining every decision with care and clarity, making your journey smoother and more manageable.
     </Fragment>
 
     <Fragment slot="bg">
@@ -145,31 +151,31 @@ const metadata = {
     isAfterContent
     items={[
       {
-        title: 'High level of customization',
-        description: `Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.`,
+        title: 'Flexible Design Choices',
+        description: `Customize every detail to ensure the platform aligns perfectly with your needs and values.`,
       },
       {
-        title: 'Multiple layout possibilities',
+        title: 'Secure and Private',
         description:
-          'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
+          'Ensuring the highest standards of security and privacy to protect your personal information and data.',
       },
       {
-        title: 'Fully responsive design',
+        title: 'Accessible Anywhere',
         description:
-          "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
+          'Designed to be accessible on any device, allowing you to plan and manage arrangements from anywhere.',
       },
       {
-        title: 'Integration of media',
+        title: 'Streamlined Coordination',
         description:
-          'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
+          'Simplify the process of managing multiple tasks and vendors in one cohesive platform, saving time and reducing stress.',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
+      src: 'https://media.discordapp.net/attachments/1097876386137513984/1315002710239612990/Serene_Forest_Meditation_Scene_With_Reflective_Pool_1.png?ex=6755d335&is=675481b5&hm=23ef2674bc4501fd1ff8b1eb41fc2cb8bf811f6527e0c23066d59bff5ca64aee&=&format=webp&quality=lossless&width=1173&height=670',
       alt: 'Blueprint Image',
     }}
   >
-    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
+    <Fragment slot="content">Ensuring every detail reflects your needs with empathy and precision.</Fragment>
 
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
@@ -183,31 +189,32 @@ const metadata = {
     isAfterContent
     items={[
       {
-        title: 'Enhanced user engagement',
+        title: 'Modern Traditions',
         description:
-          'Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.',
+          'Respecting the past while embracing the future, our platform bridges timeless customs with contemporary convenience.',
       },
       {
-        title: 'Continuous improvement',
+        title: 'Connected Experiences',
         description:
-          'Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.',
+          'Foster collaboration and clarity with features that bring everyone together, whether near or far.',
       },
       {
-        title: 'Time and resource efficiency',
+        title: 'Unwavering Reliability',
         description:
-          'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
+          'Built to adapt to your needs, our platform ensures everything runs smoothly when it matters most.',
       },
       {
-        title: 'Community support',
-        description: `Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.`,
+        title: 'Simplified Solutions',
+        description: `We eliminate complexity, providing intuitive tools to help you plan and manage arrangements effortlessly.`,
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
+      src: 'https://media.discordapp.net/attachments/1097876386137513984/1315006930284187662/Serene_Autumn_Forest_Bathed_In_Dreamlike_Golden_Light_1.png?ex=6755d723&is=675485a3&hm=96a3b02df423eb93b76f04590191f26a261b7f035b586567b9de8686724857c7&=&format=webp&quality=lossless',
+      alt: 'Golden Hour',
     }}
   >
-    <Fragment slot="content">Designed to foster growth and success.</Fragment>
+    <Fragment slot="content">Empowering you with tools for seamless transitions.
+    </Fragment>
 
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
@@ -217,100 +224,117 @@ const metadata = {
   <!-- Steps Widget ****************** -->
 
   <Steps
-    title="Get your dream website up and running in no time with AstroWind."
+    title="Begin Your Journey with Restful Rites"
     items={[
       {
-        title: 'Step 1: <span class="font-medium">Download</span>',
+        title: 'Step 1: <span class="font-medium">Explore Options</span>',
         description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
+          "Browse through our thoughtfully crafted plans and services, designed to meet a variety of needs. Take your time to discover what feels right for you and your loved ones.",
         icon: 'tabler:package',
       },
       {
-        title: 'Step 2: <span class="font-medium">Add content</span>',
+        title: 'Step 2: <span class="font-medium">Personalize Your Experience</span>',
         description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
+          "Customize every detail with ease. From selecting cultural and spiritual practices to choosing service providers, create a meaningful experience that aligns with your values and traditions.",
         icon: 'tabler:letter-case',
       },
       {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
+        title: 'Step 3: <span class="font-medium">Secure Your Plan</span>',
         description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
+          `Complete the process with confidence. Our seamless and secure payment system ensures your peace of mind. Once confirmed, you'll receive a comprehensive guide to help you every step of the way.`,
         icon: 'tabler:paint',
       },
       {
         title: 'Ready!',
+        description: 
+          `Sit back and let us handle everything with care and precision. Restful Rites ensures a seamless and meaningful experience, allowing you to focus on what truly matters. Stay informed and in control by effortlessly tracking progress through our intuitive dashboard.`,
         icon: 'tabler:check',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      src: 'https://media.discordapp.net/attachments/1097876386137513984/1315011118279954483/Double_Exposure_Image_Featuring_Clock_And_Serene_Landscapes.png?ex=6755db0a&is=6754898a&hm=30215502b01c6d0319724578dff23196da5f7b0245bc911ba9693db7153d0a85&=&format=webp&quality=lossless',
       alt: 'Steps image',
     }}
   />
 
-  <!-- Features2 Widget ************** -->
+   <!-- Features2 Widget ************** -->
 
-  <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
-    items={[
+   <Features2
+   title="What services do we provide?"
+   subtitle="We offer a wide range of website templates that suit various industries and purposes such as business, portfolio, e-commerce, blog, etc."
+   items={[
+     {
+       title: 'Installation Instructions',
+       description:
+         'Offer clear instructions on how to download the purchased templates and install them on various website platforms or content management systems.',
+       icon: 'flat-color-icons:document',
+     },
+     {
+       title: 'Demo and Previews',
+       description:
+         'Provide interactive demos and previews that allow customers to see how their chosen template will look and function before making a purchase.',
+       icon: 'flat-color-icons:template',
+     },
+     {
+       title: 'Technical Support',
+       description:
+         'Providing customer support for any technical issues related to the templates or their implementation.',
+       icon: 'flat-color-icons:voice-presentation',
+     },
+   ]}
+ >
+   <Fragment slot="bg">
+     <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+   </Fragment>
+ </Features2>
+
+    <!-- Brands Widget ****************** -->
+
+    <Brands
+    title="Partnerships & Collaborations"
+    subtitle="At Astrowind, we believe in the power of collaboration to drive innovation and create exceptional experiences."
+    icons={[]}
+    images={[
       {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
+        src: 'https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_1280.png',
+        alt: 'Paypal',
       },
       {
-        title: 'Heros',
-        description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
+        src: 'https://cdn.pixabay.com/photo/2021/12/06/13/48/visa-6850402_1280.png',
+        alt: 'Visa',
       },
       {
-        title: 'Features',
-        description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
+        src: 'https://cdn.pixabay.com/photo/2013/10/01/10/29/ebay-189064_1280.png',
+        alt: 'Ebay',
+      },
+ 
+      {
+        src: 'https://cdn.pixabay.com/photo/2015/04/13/17/45/icon-720944_1280.png',
+        alt: 'Youtube',
       },
       {
-        title: 'Content',
-        description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
+        src: 'https://cdn.pixabay.com/photo/2013/02/12/09/07/microsoft-80658_1280.png',
+        alt: 'Microsoft',
       },
       {
-        title: 'Call-to-Action',
-        description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
+        src: 'https://cdn.pixabay.com/photo/2015/04/23/17/41/node-js-736399_1280.png',
+        alt: 'Node JS',
       },
       {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
+        src: 'https://cdn.pixabay.com/photo/2015/10/31/12/54/google-1015751_1280.png',
+        alt: 'Google',
       },
       {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
+        src: 'https://cdn.pixabay.com/photo/2021/12/06/13/45/meta-6850393_1280.png',
+        alt: 'Meta',
       },
       {
-        title: 'Contact',
-        description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
+        src: 'https://cdn.pixabay.com/photo/2013/01/29/22/53/yahoo-76684_1280.png',
+        alt: 'Yahoo',
       },
     ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
+  />
+ 
 
   <!-- HighlightedPosts Widget ******* -->
 
@@ -322,6 +346,7 @@ const metadata = {
                 `}
   />
 
+  
   <!-- FAQs Widget ******************* -->
 
   <FAQs
@@ -374,26 +399,95 @@ const metadata = {
     ]}
   />
 
-  <!-- CallToAction Widget *********** -->
+  <!-- Testimonials Widget *********** -->
 
-  <CallToAction
-    actions={[
+  <Testimonials
+    title="What our users say?"
+    testimonials={[
       {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
+        testimonial: `It's made exploring and downloading website templates a breeze. The interface is intuitive, and I had no trouble finding the perfect template for my project. It's an app that truly empowers users.`,
+        name: 'Cary Kennedy',
+        job: 'Film director',
+        image: {
+          src: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          alt: 'Cary Kennedy Image',
+        },
+      },
+      {
+        testimonial: `The app's seamless download process and intuitive layout have made selecting templates an enjoyable experience. Being able to preview and experiment with different designs before committing has saved me time and ensured I get the perfect look for my website.`,
+        name: 'Josh Wilkinson',
+        job: 'Product Manager',
+        image: {
+          src: 'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          alt: 'Josh Wilkinson Image',
+        },
+      },
+      {
+        testimonial:
+          'I was able to download and use a professional website template within minutes. The step-by-step process and user-friendly interface made it easy for me to create a website that looks as if it was designed by a pro.',
+        name: 'Sidney Hansen',
+        job: 'Decorator',
+        image: {
+          src: 'https://images.unsplash.com/photo-1512361436605-a484bdb34b5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          alt: 'Sidney Hansen Image',
+        },
       },
     ]}
-  >
-    <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
-    </Fragment>
+    callToAction={{
+      target: '_blank',
+      text: 'Read more testimonials',
+      href: 'https://github.com/onwidget/astrowind',
+      icon: 'tabler:chevron-right',
+    }}
+  />
+  <!-- Features3 Widget ************** -->
 
-    <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
-    </Fragment>
-  </CallToAction>
+  <Features3
+  
+    title="Let us know how we can help"
+    subtitle="We’re here to help and answer any question you might have."
+    columns={4}
+    items={[
+      {
+        title: 'Phone',
+        icon: 'tabler:phone',
+        callToAction: {
+          target: '_blank',
+          text: 'Call us',
+          href: '/',
+          variant: 'link',
+        },
+      },
+      {
+        title: 'Email',
+        icon: 'tabler:mail',
+        callToAction: {
+          target: '_blank',
+          text: 'Write to us',
+          href: '/',
+          variant: 'link',
+        },
+      },
+      {
+        title: 'Chat with sales',
+        icon: 'tabler:message-circle',
+        callToAction: {
+          target: '_blank',
+          text: 'Start chatting',
+          href: '/',
+          variant: 'link',
+        },
+      },
+      {
+        title: 'Chat with support',
+        icon: 'tabler:message-circle',
+        callToAction: {
+          target: '_blank',
+          text: 'Start chatting',
+          href: '/',
+          variant: 'link',
+        },
+      },
+    ]}
+  />
 </Layout>
