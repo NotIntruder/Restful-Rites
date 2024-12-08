@@ -1,5 +1,5 @@
 site:
-  name: RestfulRites
+  name: Restful Rites
   site: 'https://restfulrites'
   base: '/'
   trailingSlash: false
