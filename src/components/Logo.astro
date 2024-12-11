@@ -1,5 +1,12 @@
 ---
+import { getImage } from "astro:assets";
+import restfulritesImage from '/src/assets/favicons/restfulrites-image.png';
 
+const optimizedImage = await getImage({
+  src: restfulritesImage,
+  width: 64,
+  format: 'png',
+});
 ---
 
 <head>
@@ -17,5 +24,5 @@
 <span
   class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
 >
-  <span><img src="src/assets/favicons/restfulrites-image.png" style="height: 64px;" class="inline-grid"></span><span style="font-family: Roca One">Restful Rites</span>
+  <span><img src={optimizedImage.src} style="height: 64px;" class="inline-grid" alt="restfulrites-logo"></span><span style="font-family: Roca One">Restful Rites</span>
 </span>

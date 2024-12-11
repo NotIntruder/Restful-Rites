@@ -1,8 +1,6 @@
 ---
+import Brands from '~/components/widgets/Brands.astro';
 import Layout from '~/layouts/PageLayout.astro';
-
-import Header from '~/components/widgets/Header.astro';
-
 import Hero2 from '~/components/widgets/Hero2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features3 from '~/components/widgets/Features3.astro';
@@ -10,65 +8,57 @@ import Content from '~/components/widgets/Content.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
-
 import Button from '~/components/ui/Button.astro';
 import Image from '~/components/common/Image.astro';
 
 const appStoreImg = '~/assets/images/app-store.png';
-const appStoreDownloadLink = 'https://github.com/onwidget/astrowind';
+const appStoreDownloadLink = 'http://localhost:4321/404';
 
 const googlePlayImg = '~/assets/images/google-play.png';
-const googlePlayDownloadLink = 'https://github.com/onwidget/astrowind';
+const googlePlayDownloadLink = 'http://localhost:4321/404';
 
 const metadata = {
-  title: 'Mobile App Homepage',
+  title: 'Mobile App',
 };
 ---
+<head>
+  <style>
+    @font-face {
+      font-family: 'Roca One';
+      src: url('/src/components/ui/fonts/RocaOne-Rg.woff2') format('woff2'),
+           url('/src/components/ui/fonts/RocaOne-Rg.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+</head>
 
 <Layout metadata={metadata}>
-  <Fragment slot="announcement"></Fragment>
-  <Fragment slot="header">
-    <Header
-      position="left"
-      links={[
-        { text: 'Services', href: '#' },
-        { text: 'Features', href: '#' },
-        { text: 'About', href: '#' },
-      ]}
-      actions={[
-        {
-          text: 'Download',
-          href: '#download',
-        },
-      ]}
-      isSticky
-      showToggleTheme
-    />
-  </Fragment>
 
   <!-- Hero2 Widget ******************* -->
 
   <Hero2
-    tagline="Mobile App Web Demo"
+    tagline="Mobile App"
     image={{
       src: 'https://images.unsplash.com/photo-1535303311164-664fc9ec6532?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'AstroWind Hero Image',
+      alt: 'Restful Rites Hero Image',
     }}
+    class:list={['relative z-30']}
   >
     <Fragment slot="title">
-      <span class="text-accent dark:text-white highlight">AstroWind App</span>: <br /> professional websites <span
-        class="hidden xl:inline">made easy</span
+      <span class="text-accent dark:text-white highlight relative z-20" style="font-family: Roca One;">Restful Rites</span>: <br /><span
+        class="hidden xl:inline">Simplifying Memorials</span
       >
     </Fragment>
 
     <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        Unlock boundless creativity at your fingertips: your gateway to innovative design.
+      <span class="hidden sm:inline relative z-20">
+        Unlock limitless possibilities with ease. Your gateway to innovative memorial planning is here. 
       </span>
-      Download now and embark on a journey to elevate your projects like never before.
+      Download now and take the first step towards honoring memories like never before.
     </Fragment>
 
-    <div slot="actions" class="flex max-w-sm gap-4">
+    <div slot="actions" class="flex max-w-sm gap-4 relative z-20">
       <Button variant="link" href={appStoreDownloadLink}>
         <Image src={appStoreImg} alt="App Store Image" width={200} />
       </Button>
@@ -84,13 +74,13 @@ const metadata = {
   <Features3
     id="features"
     title="How to use our app?"
-    subtitle="Tired of spending hours crafting documents from scratch? Our app offers an innovative solution. With a wide array of professionally designed templates, you can now create stunning documents in minutes. Explore our templates now and experience the difference."
+    subtitle="Restful Rites makes the process of planning and creating personalized memorials simpler and more meaningful. Whether you're arranging memorials or organizing funeral plans, our platform offers an easy-to-use toolkit with customizable templates designed to guide you every step of the way. With our step-by-step instructions, creating heartfelt memorials is now a streamlined experience. Explore the available resources today and honor your loved ones with grace and simplicity."
     tagline="Step-by-step guide"
     columns={2}
     items={[
       {
-        title: 'Download and install the app',
-        description: `Begin your journey by downloading our user-friendly app from your device's app store or our official website.`,
+        title: 'Download the App',
+        description: `Begin by downloading Restful Rites from your preferred app store to get started on your memorial project.`,
         icon: 'tabler:square-number-1',
       },
       {
@@ -100,58 +90,69 @@ const metadata = {
         icon: 'tabler:square-number-2',
       },
       {
-        title: 'Browse templates',
-        description: 'Explore our diverse collection of website templates, categorized for easy navigation.',
+        title: 'Explore the Templates',
+        description: 'Browse through our collection of professionally designed memorial templates. These templates cover a range of needs, ensuring you find the perfect fit for your requirements.',
         icon: 'tabler:square-number-3',
       },
       {
-        title: 'Preview and select a template',
-        description: `Visualize the potential of each template through previews, then choose the one that aligns best with your project's needs.`,
+        title: 'Choose Your Template',
+        description: `Select a template that best suits your vision.`,
         icon: 'tabler:square-number-4',
+      },
+      {
+        title: 'Customize Your Design',
+        description:
+          'Personalize your template with further changes according to your needs.',
+        icon: 'tabler:square-number-5',
+      },
+      {
+        title: 'Order and Ease',
+        description:
+          'Once you’re satisfied with your design, place the order and the process will be taken care of by our team. Stay at ease as we handle the rest.',
+        icon: 'tabler:square-number-6',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1521517407911-565264e7d82d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80',
-      alt: 'Colorful Image',
+      src: 'https://images.unsplash.com/photo-1518231365576-99dafdedcd69?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      alt: 'Guide Image',
     }}
   />
 
-  <!-- Content Widget **************** -->
+    <!-- Content Widget **************** -->
 
-  <Content
+    <Content
     isReversed
+    tagline="Insider"
+    title="A Digital Solution for difficult moments"
     items={[
       {
-        title: 'User-friendly interface',
+        title: 'Built by Compassion',
         description:
-          'An intuitive and easy-to-navigate interface that allows users to quickly browse and find the templates they need.',
-        icon: 'tabler:wand',
+          `Designed with your emotions in mind, offering compassionate support during life's difficult moments.`,
       },
       {
-        title: 'Personalization options',
+        title: 'Simplicity and Ease',
         description:
-          'Include basic customization tools that let users modify text, colors, images, and other elements within the templates.',
-        icon: 'tabler:settings',
+          'User centric design and intuitive features ensure a seamless experience for users of all backgrounds.',
       },
       {
-        title: 'Ready-to-use components',
+        title: 'Evolving with You',
         description:
-          'Enhance your designs with ready-to-use elements like graphics, icons, and layouts, saving you time and boosting visual appeal.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Preview Mode',
-        description: 'Provide a preview of each template, allowing users to see how it looks before making a purchase.',
-        icon: 'tabler:carousel-horizontal',
+          'Continuously updated and improved to meet the changing needs of our users and the industry.',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1576153192621-7a3be10b356e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80',
+      src: 'https://i.ibb.co/Ct9dyJk/Polished-Wooden-Coffin-Surrounded-By-Red-Roses-And-Greenery-1.png',
       alt: 'Colorful Image',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Main Features</h3>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Making the Journey Easier</h3>
+      Streamlining every decision with care and clarity, making your journey smoother and more manageable.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 dark:bg-transparent"></div>
     </Fragment>
   </Content>
 
@@ -161,36 +162,97 @@ const metadata = {
     isAfterContent
     items={[
       {
-        title: 'Offline Access',
-        description: 'Offer the option for users to download purchased templates for offline use.',
-        icon: 'tabler:wifi-off',
+        title: 'Flexible Design Choices',
+        description: `Customize every detail to ensure the platform aligns perfectly with your needs and values.`,
       },
       {
-        title: 'Secure Cloud Storage',
+        title: 'Secure and Private',
         description:
-          'Provide cloud storage for purchased templates, ensuring users can access and back up their templates from anywhere securely.',
-        icon: 'tabler:file-download',
+          'Ensuring the highest standards of security and privacy to protect your personal information and data.',
       },
       {
-        title: 'Regular Updates',
-        description: 'Continuously add new templates and features to keep the app fresh and engaging for users.',
-        icon: 'tabler:refresh',
+        title: 'Accessible Anywhere',
+        description:
+          'Designed to be accessible on any device, allowing you to plan and manage arrangements from anywhere.',
       },
       {
-        title: 'Wishlist',
-        description: `Allow users to create a wishlist of templates they're interested in, making it easier for them to revisit and potentially purchase later.`,
-        icon: 'tabler:heart',
+        title: 'Streamlined Coordination',
+        description:
+          'Simplify the process of managing multiple tasks and vendors in one cohesive platform, saving time and reducing stress.',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1453738773917-9c3eff1db985?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Vintage Image',
+      src: 'https://i.ibb.co/frvZnHk/Serene-Forest-Meditation-Scene-With-Reflective-Pool-1.jpg',
+      alt: 'Blueprint Image',
     }}
   >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Other features</h3>
+    <Fragment slot="content">Ensuring every detail reflects your needs with empathy and precision.</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 dark:bg-transparent"></div>
     </Fragment>
   </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'Modern Traditions',
+        description:
+          'Respecting the past while embracing the future, our platform bridges timeless customs with contemporary convenience.',
+      },
+      {
+        title: 'Connected Experiences',
+        description:
+          'Foster collaboration and clarity with features that bring everyone together, whether near or far.',
+      },
+      {
+        title: 'Unwavering Reliability',
+        description:
+          'Built to adapt to your needs, our platform ensures everything runs smoothly when it matters most.',
+      },
+      {
+        title: 'Simplified Solutions',
+        description: `We eliminate complexity, providing intuitive tools to help you plan and manage arrangements effortlessly.`,
+      },
+    ]}
+    image={{
+      src: 'https://i.ibb.co/48gzbcH/Serene-Autumn-Forest-Bathed-In-Dreamlike-Golden-Light-1.jpg',
+      alt: 'Golden Hour',
+    }}
+  >
+    <Fragment slot="content">Empowering you with tools for seamless transitions.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+ <!-- Brands Widget ****************** -->
+
+      <Brands
+      title="Partnerships & Collaborations"
+      subtitle="At Restful Rites, we believe in the power of collaboration to drive innovation and create exceptional experiences."
+      icons={[]}
+      images={[
+        {
+          src: 'https://cdn.pixabay.com/photo/2021/12/06/13/48/visa-6850402_1280.png',
+          alt: 'Visa',
+        },
+        {
+          src: 'https://cdn.pixabay.com/photo/2013/02/12/09/07/microsoft-80658_1280.png',
+          alt: 'Microsoft',
+        },
+        {
+          src: 'https://cdn.pixabay.com/photo/2021/12/06/13/45/meta-6850393_1280.png',
+          alt: 'Meta',
+        },
+      ]}
+    />
 
   <!-- Stats Widget ****************** -->
 
@@ -206,41 +268,42 @@ const metadata = {
   <!-- Testimonials Widget *********** -->
 
   <Testimonials
+    id="testimonials"
     title="What our users say?"
     testimonials={[
       {
-        testimonial: `It's made exploring and downloading website templates a breeze. The interface is intuitive, and I had no trouble finding the perfect template for my project. It's an app that truly empowers users.`,
-        name: 'Cary Kennedy',
-        job: 'Film director',
+        testimonial: `Restful Rites helped us navigate a difficult time with grace and professionalism. Their thoughtful approach and attention to detail made the ceremony planning effortless. Our family is forever grateful for the support they provided.`,
+        name: 'Emma Roberts',
+        job: 'Family Member',
         image: {
           src: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-          alt: 'Cary Kennedy Image',
+          alt: 'Emma Roberts Image',
         },
       },
       {
-        testimonial: `The app's seamless download process and intuitive layout have made selecting templates an enjoyable experience. Being able to preview and experiment with different designs before committing has saved me time and ensured I get the perfect look for my website.`,
-        name: 'Josh Wilkinson',
-        job: 'Product Manager',
+        testimonial: `As a vendor, working with Restful Rites has been an absolute pleasure. Their platform streamlined everything, making it easy to collaborate with families and stay on track. I look forward to working with them on future events.`,
+        name: 'David Clark',
+        job: 'Funeral Director',
         image: {
           src: 'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-          alt: 'Josh Wilkinson Image',
+          alt: 'David Clark Image',
         },
       },
       {
         testimonial:
-          'I was able to download and use a professional website template within minutes. The step-by-step process and user-friendly interface made it easy for me to create a website that looks as if it was designed by a pro.',
-        name: 'Sidney Hansen',
-        job: 'Decorator',
+          'The Restful Rites platform allowed me to plan the entire ceremony from the comfort of my home. The process was simple, and the support team was always there to assist when I had questions. They truly make a difficult time easier to manage.',
+        name: 'Samantha Lee',
+        job: 'Grieving Daughter',
         image: {
           src: 'https://images.unsplash.com/photo-1512361436605-a484bdb34b5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-          alt: 'Sidney Hansen Image',
+          alt: 'Samantha Lee Image',
         },
       },
     ]}
     callToAction={{
       target: '_blank',
       text: 'Read more testimonials',
-      href: 'https://github.com/onwidget/astrowind',
+      href: 'https://localhost:4321/404',
       icon: 'tabler:chevron-right',
     }}
   />
@@ -248,31 +311,41 @@ const metadata = {
   <!-- FAQs Widget ******************* -->
 
   <FAQs
-    title="Still have some doubts?"
+    id="faq"
+    title="Frequently Asked Questions"
+    subtitle="Explore the answers to common questions about Restful Rites and discover how we can provide a seamless and meaningful experience."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
     items={[
       {
-        title: 'What does this app do?',
+        title: 'Why choose Restful Rites?',
         description:
-          'This app provides a platform for you to easily browse, purchase, download, and use a wide range of website templates for your projects.',
+          "Restful Rites is designed to simplify and elevate the process of planning final farewells. With personalized options, secure data handling, and a compassionate approach, we ensure every detail reflects your unique needs and values.",
       },
       {
-        title: 'How can this app solve my problem?',
+        title: 'What do I need to get started?',
         description:
-          'This app streamlines the process of finding and implementing professional website designs, saving you time and effort in creating visually appealing and functional websites.',
+          'All you need is a few basic details about your requirements and preferences. Our platform guides you through each step, ensuring the process is simple, stress-free, and tailored to your needs.',
       },
       {
-        title: 'Is it available for my device?',
-        description: `Our app is designed for compatibility across various devices and platforms, ensuring accessibility whether you're using a smartphone, tablet, or computer.`,
+        title: 'How do I customize my experience?',
+        description:
+          "From selecting themes to personalizing messages, Restful Rites offers intuitive tools that allow you to tailor every aspect of the process. Your preferences are our priority, and we ensure the experience reflects what truly matters to you.",
       },
       {
-        title: 'What makes this app different from others?',
+        title: "Can I track the progress of my arrangements?",
         description:
-          'Our app stands out for its user-friendly interface, extensive template collection, and seamless integration of the purchasing and downloading process, making it highly efficient.',
+          "Absolutely! Our user-friendly dashboard provides real-time updates, allowing you to monitor every stage of the process with ease. Transparency and accessibility are at the heart of our services.",
       },
       {
-        title: 'Are there any costs involved?',
+        title: 'What sets Restful Rites apart?',
         description:
-          'While the app itself may be free to download, there may be costs associated with purchasing specific templates based on your preferences and project requirements.',
+          "Our platform combines empathy, precision, and innovation. We go beyond just providing services — we create meaningful experiences that honor your loved ones while simplifying the logistics for you.",
+      },
+      {
+        title: 'What support is available if I have more questions?',
+        description:
+          "Our dedicated support team is available 24/7 to address any concerns or answer additional questions. We’re here to help every step of the way, ensuring your experience is as smooth and heartfelt as possible.",
       },
     ]}
   />
@@ -282,7 +355,7 @@ const metadata = {
   <CallToAction
     id="download"
     title="Download our app now!"
-    subtitle="Access a variety of stunning templates, simplify your creative process, and elevate your online presence."
+    subtitle="Take the first step towards creating heartfelt memorials with Restful Rites. Download our app today and unlock a world of possibilities."
   >
     <div slot="actions" class="flex max-w-sm gap-4">
       <Button variant="link" href={appStoreDownloadLink}>

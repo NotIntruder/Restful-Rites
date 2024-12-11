@@ -1,14 +1,13 @@
 ---
-publishDate: 2023-08-06T00:00:00Z
-title: How to customize AstroWind template to suit your branding
-excerpt: Personalize AstroWind template for your brand. Our guide unlocks seamless customization steps for a unique online presence.
-image: https://images.unsplash.com/photo-1546984575-757f4f7c13cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80
+publishDate: 2024-12-09T12:29:24+00:00
+author: Restful Rites
+title: Navigating Grief with Support and Compassion
+excerpt: Grief can feel overwhelming. Discover tips, resources, and support to help you or your loved ones navigate this difficult time with compassion.
+image: https://images.unsplash.com/photo-1629552049369-39a7388565c1?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+category: Wellness
 tags:
-  - astro
-  - tailwind css
-  - theme
-metadata:
-  canonical: https://astrowind.vercel.app/how-to-customize-astrowind-to-your-brand
+  - grief support
+  - mental well-being
 ---
 
 ## Congue justo vulputate nascetur convallis varius orci fringilla nulla pharetr
